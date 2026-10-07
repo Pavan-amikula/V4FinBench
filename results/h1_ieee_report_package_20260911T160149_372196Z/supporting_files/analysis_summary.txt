@@ -1,0 +1,21 @@
+V4FinBench final LightGBM analysis
+
+Model policy:
+- Main benchmark model: all 131 official features.
+- Timing sensitivity: report the model without operational_status.
+- Do not describe either model as deployment-ready.
+
+Frozen evaluation:
+- Best iteration: 100
+- Raw-score threshold: -2.308776
+- 2019 PR-AUC: 0.068697
+- 2019 ROC-AUC: 0.928130
+- 2019 F1: 0.149927
+- 2019 precision: 0.102488
+- 2019 recall: 0.279133
+
+Interpretation:
+- SHAP values explain contributions to the raw LightGBM score.
+- Positive SHAP values push predictions toward distress.
+- Negative SHAP values push predictions toward the healthy class.
+- All plots and error tables are post-hoc analyses; the test threshold was not changed.

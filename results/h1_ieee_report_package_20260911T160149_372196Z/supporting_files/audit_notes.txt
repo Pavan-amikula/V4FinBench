@@ -1,0 +1,19 @@
+V4FinBench final leakage audit
+
+Confirmed task mapping:
+- company_years_h2.parquet is paper horizon h=1.
+- The task predicts financial distress one year ahead.
+
+Decision boundary:
+- Training period ends in 2017.
+- Validation year is 2018.
+- Test year is 2019 and is not used by this script for target-association decisions.
+- 2020 is retained only for structural auditing.
+
+Findings:
+- operational_status behaves almost entirely as a company-level snapshot. Its historical point-in-time availability cannot be established from the parquet values alone. Keep the no-status sensitivity result in the final report.
+
+Interpretation rule:
+- Strong predictive power alone is not proof of leakage.
+- Near-constant company metadata repeated across historical years requires a point-in-time availability caveat.
+- Do not change the decision threshold using the 2019 test labels.

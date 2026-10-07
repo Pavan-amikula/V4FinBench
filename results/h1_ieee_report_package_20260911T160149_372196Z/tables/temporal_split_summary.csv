@@ -1,0 +1,4 @@
+split,rows,positive_rows,positive_percentage
+training,706154,2120,0.30021779951681926
+validation,92139,565,0.6132039635767699
+testing,103453,369,0.3566837114438441

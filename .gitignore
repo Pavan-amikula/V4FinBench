@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+*.db
+*.sqlite*
+.ipynb_checkpoints/
+*.h5
+*.keras
+*.pkl
+*.sav
+*.joblib
+*.parquet
+*.npy
+*.npz
+**/uploads/
+Dataset/*.csv
+data/raw/
+data/processed/
+data/folds/
+saved models/
+savedmodel_brain_tumor/
+fixed_models_robust/

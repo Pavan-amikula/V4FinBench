@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\caption{Five-fold grouped cross-validation results for one-year-ahead financial distress prediction. Values are mean $\pm$ sample standard deviation.}
+\label{tab:cv-results}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Model & Accuracy & Precision & Recall & $F_1$ & ROC-AUC & PR-AUC \\
+\midrule
+SGD Logistic Regression & $0.9767 \pm 0.0030$ & $0.0414 \pm 0.0054$ & \textbf{$0.2949 \pm 0.0188$} & $0.0725 \pm 0.0083$ & $0.9011 \pm 0.0027$ & $0.0284 \pm 0.0029$ \\
+XGBoost & $0.9930 \pm 0.0006$ & $0.1350 \pm 0.0092$ & $0.2366 \pm 0.0119$ & $0.1716 \pm 0.0071$ & \textbf{$0.9423 \pm 0.0055$} & $0.0984 \pm 0.0086$ \\
+CatBoost & $0.9931 \pm 0.0015$ & $0.1454 \pm 0.0183$ & $0.2434 \pm 0.0620$ & $0.1770 \pm 0.0111$ & $0.9397 \pm 0.0040$ & $0.1029 \pm 0.0113$ \\
+LightGBM & \textbf{$0.9931 \pm 0.0010$} & \textbf{$0.1478 \pm 0.0268$} & $0.2486 \pm 0.0295$ & \textbf{$0.1827 \pm 0.0137$} & $0.9413 \pm 0.0041$ & \textbf{$0.1030 \pm 0.0124$} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

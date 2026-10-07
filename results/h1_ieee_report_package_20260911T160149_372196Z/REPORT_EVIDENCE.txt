@@ -1,0 +1,50 @@
+V4FinBench final report evidence summary
+
+Task definition:
+- Dataset file: company_years_h2.parquet.
+- Paper horizon: h=1, one-year-ahead financial distress.
+- Rows: 996,500.
+- Features: 131.
+- Positive records: 3,054.
+- Validation protocol: five company-grouped, country-preserving folds.
+
+Primary grouped cross-validation findings:
+- LightGBM achieved the best mean F1 (0.182673) and PR-AUC (0.103034).
+- LightGBM improved mean F1 by 151.9% and mean PR-AUC by 262.5% relative to SGD Logistic Regression.
+- XGBoost had the highest mean ROC-AUC (0.942266), exceeding LightGBM by only 0.001012.
+- Logistic Regression produced the highest mean recall but much lower precision, F1, and PR-AUC.
+
+Model policy:
+- Primary benchmark model: LightGBM with all 131 official features.
+- Timing sensitivity model: LightGBM without operational_status.
+- Do not describe the model as deployment-ready.
+
+Temporal evaluation:
+- All-feature 2019 test F1: 0.149927.
+- All-feature 2019 test ROC-AUC: 0.928130.
+- All-feature 2019 test PR-AUC: 0.068697.
+- Without-status 2019 test F1: 0.141443; PR-AUC: 0.063249.
+
+Feature-timing audit:
+- operational_status was constant for 99.8891% of company groups.
+- 99.9502% of rows equaled the company's latest status value.
+- The no-status sensitivity model must therefore remain in the report.
+- Insolvency_flag and Loss_flag changed across company-year records and did not directly reproduce the target.
+
+Top SHAP features:
+- 1. Equity/total_liabilities
+- 2. operational_status
+- 3. year
+- 4. Total_liabilities/total_assets
+- 5. Working_capital
+- 6. Equity-share_capital/fixed_assets
+- 7. Log_revenue/gdp
+- 8. Net_profit+depreciation/total_liabilities
+- 9. Working_capital/total_liabilities
+- 10. Log_operating_profit/gdp
+
+Important interpretation constraints:
+- Thresholds were selected on validation data and applied unchanged to test data.
+- The temporal test set was not used for threshold retuning.
+- 2020 contains zero positive labels and is not used as a temporal test year.
+- Country-level results show that one global threshold transfers unevenly across countries; this is reported as a limitation rather than corrected using test labels.

@@ -1,0 +1,24 @@
+{
+  "dataset": "data\\raw\\company_years_h2.parquet",
+  "kaggle_horizon_file": 2,
+  "paper_horizon": 1,
+  "prediction_task": "one-year-ahead financial distress",
+  "training_end_year": 2017,
+  "validation_year": 2018,
+  "test_year": 2019,
+  "unresolved_year": 2020,
+  "rows": 996500,
+  "company_country_groups": 187532,
+  "audited_columns": [
+    "operational_status",
+    "Insolvency_flag",
+    "Loss_flag",
+    "year"
+  ],
+  "runtime_seconds": 1.756998199998634,
+  "python_version": "3.14.4",
+  "numpy_version": "2.5.3",
+  "pandas_version": "3.0.5",
+  "pyarrow_version": "25.0.1",
+  "scikit_learn_version": "1.9.1"
+}

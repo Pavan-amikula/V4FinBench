@@ -1,0 +1,28 @@
+{
+  "project": "V4FinBench one-year-ahead financial distress prediction",
+  "created_utc": "20260911T160149_372196Z",
+  "completion_status": "modeling and analysis complete; report pending",
+  "primary_model": "LightGBM with all 131 features",
+  "sensitivity_model": "LightGBM without operational_status",
+  "cv_winners": {
+    "accuracy": "LightGBM",
+    "precision": "LightGBM",
+    "recall": "SGD Logistic Regression",
+    "f1": "LightGBM",
+    "roc_auc": "XGBoost",
+    "average_precision": "LightGBM"
+  },
+  "source_directories": {
+    "SGD Logistic Regression": "results\\h1_sgd_logistic_cv_20260911T154854_748261Z",
+    "XGBoost": "results\\h1_xgboost_cv_20260911T132045_245098Z",
+    "CatBoost": "results\\h1_catboost_cv_20260911T135246_091514Z",
+    "LightGBM": "results\\h1_lightgbm_cv_20260911T130235_435022Z"
+  },
+  "temporal_directory": "results\\h1_lightgbm_temporal_20260911T150313_430344Z",
+  "leakage_audit_directory": "results\\h1_final_leakage_audit_20260911T152816_570316Z",
+  "analysis_directory": "results\\h1_final_analysis_20260911T154234_409638Z",
+  "python_version": "3.14.4",
+  "package_contains_model_binaries": false,
+  "package_contains_raw_company_data": false,
+  "package_build_runtime_seconds": 0.7503525000065565
+}
